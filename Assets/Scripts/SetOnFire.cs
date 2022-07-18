@@ -33,7 +33,15 @@ public class SetOnFire : MonoBehaviour
 
     IEnumerator TempFire()
     {
-        yield return new WaitForSeconds(timer);
+        float timeLeft = timer;
+
+
+        while (timeLeft > 0)
+        {
+            timeLeft -= Time.deltaTime;
+            yield return null;
+        }
+
         fireModel.SetActive(false);
         onFire = false;
     }
