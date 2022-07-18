@@ -8,6 +8,7 @@ public class SetOnFire : MonoBehaviour
     public bool onFire = false;
     public bool permFire = false;
     public float timer = 8f;
+    public GameObject flameDoor;
 
 
     private void OnTriggerEnter(Collider other)
@@ -22,6 +23,8 @@ public class SetOnFire : MonoBehaviour
                     onFire = true;
                     if (!permFire)
                         StartCoroutine(TempFire());
+                    if (flameDoor != null)
+                        flameDoor.GetComponent<FireWall>().CheckFlame();
                 }
             }
         }
