@@ -1,11 +1,14 @@
 fileFormatVersion: 2
-guid: 902867154a24cf246a9c7890fbebd9b0
+guid: b29910ee0963cbd489812cd39929c5cf
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: -4746786678432012533
     second: Anim_Serpent_Move
+  - first:
+      74: 8090265190034164253
+    second: Anim_Serpent_Bite
   externalObjects: {}
   materials:
     materialImportMode: 2
