@@ -30,7 +30,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Anim_Serpent_Move
-  m_Speed: 1
+  m_Speed: 0.77
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8457652562479432435}
@@ -43,7 +43,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: defd1b3307e109f4e80c5d0c36802e6e, type: 2}
+  m_Motion: {fileID: -4746786678432012533, guid: 902867154a24cf246a9c7890fbebd9b0, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

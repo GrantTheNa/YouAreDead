@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_YAADAtlas_Toon
+  m_Name: M_YAADAtlas_Bright
   m_Shader: {fileID: -6465566751694194690, guid: 07b55525a74d7c644b2c64ff40e1c482, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -80,10 +80,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2748b200e46d48b9b6daab596227a49a: 0.095
-    - Vector1_49cc101e522c4b4b89f33e9b1299fb18: -0.29
-    - Vector1_cba6c966c612426db858cba3a33a15fb: 0.101
-    - Vector1_f8581b22d8c4440eac92b95fc621bb8e: 0.45
+    - Vector1_2748b200e46d48b9b6daab596227a49a: 0
+    - Vector1_49cc101e522c4b4b89f33e9b1299fb18: -1
+    - Vector1_cba6c966c612426db858cba3a33a15fb: 0.149
+    - Vector1_f8581b22d8c4440eac92b95fc621bb8e: 0.488
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -112,7 +112,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_8c5684248a3c4f1ebed0a0d140e9dc4b: {r: 0.2927825, g: 0.16042188, b: 0.3301887, a: 0}
-    - Color_f70386baef43415db303bf65fdcb3a0c: {r: 0.09789959, g: 0.8301887, b: 0.72587454, a: 0}
+    - Color_f70386baef43415db303bf65fdcb3a0c: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
