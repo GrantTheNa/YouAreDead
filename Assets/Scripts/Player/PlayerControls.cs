@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 public class PlayerControls : MonoBehaviour
 {
     [Header("Player Config")]
-    public float walkSpeed = 2.0f;
-    public float runSpeed = 6.0f;
+    public float walkSpeed = 4.0f;
+    public float runSpeed = 8.0f;
     public float speedOffset = 1.0f;
    
     [Tooltip("Player turn rate")]
@@ -15,20 +15,6 @@ public class PlayerControls : MonoBehaviour
 
     [Tooltip("Player rate of speed change")]
     public float speedChangeRate = 10.0f;
-
-    [Header("Player Grounded")]
-    [Tooltip("Check if the Player is grounded")]
-    public bool grounded = true;
-
-    [Tooltip("Rough grounded offset, useful for complicated terrains")]
-    [Range(-1, 1)]
-    public float groundedOffSet = 0.0f;
-
-    [Tooltip("Radius of the above check")]
-    public float groundedRadius = 0.3f;
-
-    [Tooltip("Layers approved to be the 'grounded'")]
-    public LayerMask groundLayers;
 
     // Animator animator;
     Animator animator;
@@ -39,14 +25,10 @@ public class PlayerControls : MonoBehaviour
     //player settings
     float speed;
     float rotation = 0;
-    float forwardVelocity;
+    float ySpeed;
     float animationBlend;
-    //=----------------------=
 
     bool hasAnimator;
-    bool rotateOnMove = true;
-
-    Vector3 spherePos;
 
     void Awake()
     {
@@ -63,25 +45,12 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
-        Grounded();
         MovePlayer();
-    }
-
-    void Grounded()
-    {
-        spherePos = new Vector3(transform.position.x, transform.position.y - groundedOffSet, transform.position.z);
-        grounded = Physics.CheckSphere(spherePos, groundedRadius, groundLayers,
-           QueryTriggerInteraction.Ignore);
-
-        if (hasAnimator)
-        {
-            //animator.SetBool("isGrounded", grounded);
-        }
     }
 
     void MovePlayer()
     {
-        //sprint
+        //check if the user is sprinting
         float targetSpeed = inputs.run ? runSpeed : walkSpeed;
 
         //check if player stops pressing a key
@@ -101,9 +70,8 @@ public class PlayerControls : MonoBehaviour
             speed = Mathf.Round(speed * 1000) / 1000f; // This will keep it at 3 decimal places.
         }
         else
-        {
             speed = targetSpeed;
-        }
+        
 
         //blend the animation
         animationBlend = Mathf.Lerp(animationBlend, targetSpeed, Time.deltaTime * speedChangeRate);
@@ -120,23 +88,22 @@ public class PlayerControls : MonoBehaviour
 
         Vector3 targetDir = Quaternion.Euler(0.0f, rotation, 0.0f) * Vector3.forward;
 
+        //apply gravity
+        if (cc.isGrounded)      
+            ySpeed = 0;
+        else
+            ySpeed = Physics.gravity.y;
+
         cc.Move(targetDir.normalized * (speed * Time.deltaTime) +
-            new Vector3(0.0f, forwardVelocity, 0.0f) * Time.deltaTime);
+            new Vector3(0.0f, ySpeed, 0.0f) * Time.deltaTime);
 
         //update animator
-        if (hasAnimator)
-        {
+        //if (hasAnimator)
+        //{
            // Vector2 move = new Vector2(forwardVelocity, currentHorizontalSpeed).normalized;
            // animator.SetFloat("Speed", animationBlend);
            // animator.SetFloat("SpeedMultiplier", inputMag);
-        }
-
-
+        //}
         //=============
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawSphere(spherePos, 0.5f);
     }
 }

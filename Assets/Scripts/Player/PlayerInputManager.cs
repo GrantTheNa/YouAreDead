@@ -53,8 +53,7 @@ public class PlayerInputManager : MonoBehaviour
     #region Functions Created For Connecting to Unity Input System
     public void OnMove(InputValue a_value)
     {
-        MoveInputs(a_value.Get<Vector2>());
-        Debug.Log(a_value);
+        MoveInputs(a_value.Get<Vector2>());   
     }
 
     public void OnRun(InputValue a_value)
