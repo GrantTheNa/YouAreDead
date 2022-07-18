@@ -2390,8 +2390,8 @@ MonoBehaviour:
   portraits: []
   portraitsFace: 0
   setSayDialog: {fileID: 0}
-  description: "Ferryman: Hm?\r\nFerryman: You look puzzled.\r\nFerryman: Hm? This
-    is an island, a sort of station for lost souls like you.\r\nFerryman: Yes? What\u2019s
+  description: "Ferryman: Hm?\r\nFerryman: You look puzzled.\r\nFerryman: Yes? This
+    is an island, a sort of station for lost souls like you.\r\nFerryman: Hm? What\u2019s
     that? This boat? I have a fee of two coins for those wishing to cross.\r\nFerryman:
     \u2026\r\nFerryman: Do you have two coins?\r\n\r\n-\tShake head \r\nFerryman:
     Then I can\u2019t help you\r\n\r\n-\tTilt head\r\nFerryman: You still seem confused\u2026
@@ -17720,10 +17720,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 1554588064}
-  selectedCommands:
-  - {fileID: 1554588067}
+  selectedBlocks: []
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
