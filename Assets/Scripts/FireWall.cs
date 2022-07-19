@@ -6,6 +6,9 @@ public class FireWall : MonoBehaviour
 {
     public GameObject[] flamePrefabs;
 
+    //Turn on Area
+    public GameObject showRoom;
+
     public void CheckFlame()
     {
         int amount = 0;
@@ -26,7 +29,8 @@ public class FireWall : MonoBehaviour
 
     private void DestroyDoor()
     {
-        ///Change to Animator or Lerp
-            Destroy(this.gameObject);
+
+        showRoom.SetActive(true);
+        Destroy(this.gameObject);
     }
 }

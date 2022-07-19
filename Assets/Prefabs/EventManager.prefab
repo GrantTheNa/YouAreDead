@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &5362654590073399817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959014321407130220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f6cd2fc936b7974d8309cb13280b8ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotatePoint: {fileID: 0}
+  rotSpeed: 50
 --- !u!1 &5362654588656896844
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,8 +535,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5362654589781874291}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.3704033, y: 83.10171, z: -61.361416}
-  m_LocalScale: {x: 0.70111036, y: 28.518, z: 10.385685}
+  m_LocalPosition: {x: -6.3704033, y: 95.47, z: -61.361416}
+  m_LocalScale: {x: 0.70111036, y: 3.3085387, z: 10.385685}
   m_Children: []
   m_Father: {fileID: 5362654588656896845}
   m_RootOrder: 10
@@ -606,6 +620,7 @@ MonoBehaviour:
   - {fileID: 6115717643165802372}
   - {fileID: 6115717644169233566}
   - {fileID: 6115717642150767207}
+  showRoom: {fileID: 0}
 --- !u!1 &5362654589804323419
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,20 +673,8 @@ MonoBehaviour:
   player: {fileID: 0}
   shouldRespawn: 0
   spawnPoint: {fileID: 5362654589781515452}
---- !u!114 &5362654590073399817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 959014321407130220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f6cd2fc936b7974d8309cb13280b8ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotatePoint: {fileID: 0}
-  rotSpeed: 50
+  startingDialogue: {fileID: 0}
+  endDialogue: {fileID: 0}
 --- !u!1001 &1759502500263710169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -993,14 +996,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 379c27ca25bc27d41921ca14b206bfb0, type: 3}
---- !u!1 &959014321407130220 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5126472543703342747, guid: 379c27ca25bc27d41921ca14b206bfb0, type: 3}
-  m_PrefabInstance: {fileID: 5362654589424297207}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &433694515263152342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5507677161765159969, guid: 379c27ca25bc27d41921ca14b206bfb0, type: 3}
+  m_PrefabInstance: {fileID: 5362654589424297207}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &959014321407130220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5126472543703342747, guid: 379c27ca25bc27d41921ca14b206bfb0, type: 3}
   m_PrefabInstance: {fileID: 5362654589424297207}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5362654589856191223
