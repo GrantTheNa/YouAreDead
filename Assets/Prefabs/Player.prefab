@@ -127,7 +127,7 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 1b261bf8-f7c6-4ee5-b40d-e6ecdb338a4c
     m_ActionName: UI/TrackedDeviceOrientation
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
@@ -198,12 +198,12 @@ NavMeshObstacle:
   m_GameObject: {fileID: 8006118293751576188}
   m_Enabled: 1
   serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.925, z: 0.5}
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.87, z: 0}
+  m_Center: {x: 0, y: 0.91, z: 0}
   m_TimeToStationary: 0.5
 --- !u!114 &3861674246996177620
 MonoBehaviour:
