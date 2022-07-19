@@ -17,10 +17,12 @@ public class SetOnFire : MonoBehaviour
 
     //Find Manager
     public Manager manager;
+    private SoundManager soundManager;
 
     private void Start()
     {
         manager = FindObjectOfType<Manager>();
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,8 +35,11 @@ public class SetOnFire : MonoBehaviour
                 {
                     fireModel.SetActive(true);
                     onFire = true;
+                    soundManager.Play2D("FireLit");
                     if (!permFire)
                         StartCoroutine(TempFire());
+                    else
+                        soundManager.Play("FireCrack", this.gameObject.transform.position);
                     if (flameDoor != null)
                         flameDoor.GetComponent<FireWall>().CheckFlame();
                 }

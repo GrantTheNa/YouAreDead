@@ -81,7 +81,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     pitchVarient: 1
-    spatialBlend: 0
+    spatialBlend: 1
     loop: 1
     source: {fileID: 0}
   - name: FireLit
