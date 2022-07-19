@@ -21,6 +21,7 @@ public class PlayerControls : MonoBehaviour
 
     public bool shouldRespawn;
     public bool headMode;
+    public bool canPlayerMove = true;
 
     // Animator animator;
     Animator animator;
@@ -56,13 +57,15 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
-        MovePlayer();
-        RespawnPlayer();
+        if (canPlayerMove)       
+            MovePlayer();
+        
+        if (shouldRespawn)
+            RespawnPlayer();
     }
 
     void RespawnPlayer()
-    {
-        if (shouldRespawn)      
+    { 
             gameObject.transform.position = spawn.transform.position;
     }
 
@@ -81,14 +84,15 @@ public class PlayerControls : MonoBehaviour
         //check if player stops pressing a key
         if (inputs.move == Vector2.zero)      
             targetSpeed = 0.0f;
-         
+        
+ 
         //grab the players current speed
-        float currentHorizontalSpeed = new Vector3(cc.velocity.x, 0.0f, cc.velocity.z).magnitude;
+        float currentVel = new Vector3(cc.velocity.x, 0.0f, cc.velocity.z).magnitude;
 
         //we adjust the target speed
-        if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
+        if (currentVel < targetSpeed - speedOffset || currentVel > targetSpeed + speedOffset)
         {
-            speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputs.move.magnitude, Time.deltaTime * speedChangeRate);
+            speed = Mathf.Lerp(currentVel, targetSpeed * inputs.move.magnitude, Time.deltaTime * speedChangeRate + 0.1f);
             speed = Mathf.Round(speed * 1000) / 1000f; // This will keep it at 3 decimal places.
         }
         else
@@ -125,7 +129,7 @@ public class PlayerControls : MonoBehaviour
     {
         headMode = true;
         cc.height = 0.01f;
-        cc.radius = 0.5f;
+        cc.radius = 0.1f;
     }
 
     public void Heal()
