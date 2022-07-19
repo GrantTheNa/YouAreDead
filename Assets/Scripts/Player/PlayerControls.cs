@@ -20,6 +20,7 @@ public class PlayerControls : MonoBehaviour
     public float speedChangeRate = 10.0f;
 
     public bool shouldRespawn;
+    public bool headMode;
 
     // Animator animator;
     Animator animator;
@@ -32,8 +33,12 @@ public class PlayerControls : MonoBehaviour
     float camRotation = 0;
     float ySpeed;
     float animationBlend;
+    float ccHeight;
+    float ccRadius;
 
     bool hasAnimator;
+
+    public GameObject spawn;
 
     void Awake()
     {
@@ -46,6 +51,8 @@ public class PlayerControls : MonoBehaviour
         hasAnimator = TryGetComponent(out animator);
         inputs = GetComponent<PlayerInputManager>();
         cc = GetComponent<CharacterController>();
+        ccHeight = cc.height;
+        ccRadius = cc.radius;
     }
 
     void Update()
@@ -62,7 +69,8 @@ public class PlayerControls : MonoBehaviour
         if (shouldRespawn)
         {
             //change this line to be the transform of the spawn object instead of a new vector 3
-            gameObject.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+            gameObject.transform.position = spawn.transform.position;
+            Debug.Log("Respawn");
         }
     }
 
@@ -132,5 +140,19 @@ public class PlayerControls : MonoBehaviour
            // animator.SetFloat("SpeedMultiplier", inputMag);
         //}
         //=============
+    }
+
+    public void Eaten()
+    {
+        headMode = true;
+        cc.height = 0.01f;
+        cc.radius = 0.5f;
+    }
+
+    public void Heal()
+    {
+        headMode = false;
+        cc.height = ccHeight;
+        cc.radius = ccRadius;
     }
 }

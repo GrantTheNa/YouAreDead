@@ -26,6 +26,7 @@ public class FireWall : MonoBehaviour
 
     private void DestroyDoor()
     {
+        ///Change to Animator or Lerp
             Destroy(this.gameObject);
     }
 }
