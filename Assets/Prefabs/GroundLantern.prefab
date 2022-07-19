@@ -1293,9 +1293,11 @@ MonoBehaviour:
   fireModel: {fileID: 4522429247355743801}
   onFire: 0
   permFire: 0
-  timer: 8
+  timer: 20
   flameDoor: {fileID: 0}
   isWet: 0
+  isRespawning: 0
+  manager: {fileID: 0}
 --- !u!1 &4522429247355743801
 GameObject:
   m_ObjectHideFlags: 0
