@@ -44,10 +44,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Sound 1
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: Crow_1
+    clip: {fileID: 8300000, guid: 25af2df8b6bd52a4e87f214888d569fb, type: 3}
+    volume: 1
+    pitch: 1
+    pitchVarient: 0
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: Crow_2
+    clip: {fileID: 8300000, guid: a02622c9e6f5ddb46b0685d68b849d6b, type: 3}
+    volume: 1
+    pitch: 1
+    pitchVarient: 0
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: Owl
+    clip: {fileID: 8300000, guid: 97888e51204412a4b8969119da3a825a, type: 3}
+    volume: 1
+    pitch: 1
+    pitchVarient: 0
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: Raven
+    clip: {fileID: 8300000, guid: f01854988d9553a4988ba5b5b644564c, type: 3}
+    volume: 1
+    pitch: 1
     pitchVarient: 0
     spatialBlend: 0
     source: {fileID: 0}
