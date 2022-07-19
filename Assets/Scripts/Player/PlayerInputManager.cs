@@ -58,7 +58,6 @@ public class PlayerInputManager : MonoBehaviour
     public void OnSprint(InputValue a_value)
     {
         RunInput(a_value.isPressed);
-        Debug.Log("is running");
     }
 
     public void OnInteract(InputValue a_value)

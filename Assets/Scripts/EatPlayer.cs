@@ -13,6 +13,6 @@ public class EatPlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        playerControls.Eaten();
+        playerControls.BodyEaten();
     }
 }

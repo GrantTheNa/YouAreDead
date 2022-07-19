@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class CompanionBehaviour : MonoBehaviour
 {
-    public float startFollowingWithinDist = 10;
-    public float stopsFollowingAtDist = 50;
+    public float startFollowingWithinDist = 3;
+    public float stopsFollowingAtDist = 10;
 
     GameObject player;
     Animator animator;
