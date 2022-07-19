@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 public class PlayerControls : MonoBehaviour
 {
     [Header("Player Config")]
+
+    public GameObject playerModel;
+
     public float walkSpeed = 4.0f;
     public float runSpeed = 8.0f;
     public float speedOffset = 1.0f;
@@ -24,7 +27,7 @@ public class PlayerControls : MonoBehaviour
 
     //player settings
     float speed;
-    float rotation = 0;
+    float camRotation = 0;
     float ySpeed;
     float animationBlend;
 
@@ -46,6 +49,20 @@ public class PlayerControls : MonoBehaviour
     void Update()
     {
         MovePlayer();
+        PlayerInteract();
+    }
+
+    void PlayerInteract()
+    {
+        bool playerInteract = inputs.interact;
+        if (playerInteract)
+        {
+            //check if player is near object 
+            //do thing
+
+
+            Debug.Log("interact");
+        }
     }
 
     void MovePlayer()
@@ -71,7 +88,6 @@ public class PlayerControls : MonoBehaviour
         }
         else
             speed = targetSpeed;
-        
 
         //blend the animation
         animationBlend = Mathf.Lerp(animationBlend, targetSpeed, Time.deltaTime * speedChangeRate);
@@ -79,14 +95,15 @@ public class PlayerControls : MonoBehaviour
         //get the normal of the input direction
         Vector3 inputDir = new Vector3(inputs.move.x, 0.0f, inputs.move.y).normalized;
 
-        //rotate the player
-        if (inputs.move != Vector2.zero)
-        {
-            rotation = Mathf.Atan2(inputDir.x, inputDir.z) * Mathf.Rad2Deg 
-                + mainCamera.transform.eulerAngles.y;           
-        }
+        camRotation = Mathf.Atan2(inputDir.x, inputDir.z) * Mathf.Rad2Deg + mainCamera.transform.eulerAngles.y;
+        Vector3 targetDir = Quaternion.Euler(0.0f, camRotation, 0.0f) * Vector3.forward;
+        Vector3 playerRotation = Quaternion.Euler(0.0f, camRotation - 90, 0.0f) * Vector3.forward;
 
-        Vector3 targetDir = Quaternion.Euler(0.0f, rotation, 0.0f) * Vector3.forward;
+        //rotate the player
+        if (inputs.move != Vector2.zero)               
+            playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, 
+                Quaternion.LookRotation(playerRotation), 0.15f);
+        
 
         //apply gravity
         if (cc.isGrounded)      
