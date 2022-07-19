@@ -9,6 +9,11 @@ public class PlayerControls : MonoBehaviour
     public GameObject playerHead2;
     public GameObject playerArm;
 
+    [Header("Player interactions")]
+    public GameObject spawn;
+    public GameObject MenuUI;
+    public bool paused;
+
     [Space(10)]
 
     public float heightDeath = -5.0f;
@@ -37,7 +42,7 @@ public class PlayerControls : MonoBehaviour
     float ccHeight;
     float ccRadius;
 
-    public GameObject spawn;
+    
 
     void Awake()
     {
@@ -63,8 +68,6 @@ public class PlayerControls : MonoBehaviour
 
         if (playerModel != null)
             playerModel.SetActive(true);
-
-        //HeadRollTest();
     }
 
     void Update()
@@ -80,6 +83,12 @@ public class PlayerControls : MonoBehaviour
         //respawn player and height check
         if (shouldRespawn || gameObject.transform.position.y < heightDeath)
             RespawnPlayer();
+
+        if (paused)
+        {
+            MenuUI.SetActive(true);
+            canPlayerMove = false;
+        }
     }
 
     void HeadRollTest()
