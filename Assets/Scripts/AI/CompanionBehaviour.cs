@@ -29,7 +29,7 @@ public class CompanionBehaviour : MonoBehaviour
         {          
             //tell animator to walk/hop
             if (animator != null)
-                animator.SetBool("isMoving", true);
+                animator.SetBool("isMoving", false);
         }
 
         //if the creature is close
@@ -37,7 +37,7 @@ public class CompanionBehaviour : MonoBehaviour
         {
             GetComponent<NavMeshAgent>().destination = player.transform.position + Vector3.right;
             if (animator != null)
-                animator.SetBool("isMoving", false);
+                animator.SetBool("isMoving", true);
         }
     }
 }

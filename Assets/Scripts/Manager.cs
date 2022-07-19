@@ -28,6 +28,10 @@ public class Manager : MonoBehaviour
     //coins
     int coinAmount = 0;
 
+    //Post Serpant Coin
+    public GameObject S_HiddenPath;
+    public GameObject S_SecretDoor_1;
+    public GameObject S_SecretDoor_2;
 
     public void FireCoin() //When Fire coin is collected
     {
@@ -41,6 +45,9 @@ public class Manager : MonoBehaviour
 
     public void SerpentCoin() //When Serpent Coin is collected
     {
+        S_HiddenPath.SetActive(true);
+        S_SecretDoor_1.SetActive(false);
+        S_SecretDoor_2.SetActive(false);
         CheckCoins();
     }
 
