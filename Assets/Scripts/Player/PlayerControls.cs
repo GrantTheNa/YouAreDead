@@ -32,7 +32,6 @@ public class PlayerControls : MonoBehaviour
     float speed;
     float camRotation = 0;
     float ySpeed;
-    bool isRunning;
 
     float ccHeight;
     float ccRadius;
@@ -70,11 +69,8 @@ public class PlayerControls : MonoBehaviour
     void PlayerAnimation(bool isGrabbing, float playerSpeed)
     {
         animator.SetBool("grab", isGrabbing);
-
         animator.SetFloat("movement", playerSpeed);
-
         animator.SetBool("isRunning", playerSpeed == runSpeed);
-
     }
 
     void MovePlayer()
@@ -83,31 +79,28 @@ public class PlayerControls : MonoBehaviour
         float targetSpeed = inputs.run ? runSpeed : walkSpeed;
 
         //check if player stops pressing a key
-        if (inputs.move == Vector2.zero)
+        if (inputs.move == Vector2.zero)      
             targetSpeed = 0.0f;
-
+         
         //grab the players current speed
         float currentHorizontalSpeed = new Vector3(cc.velocity.x, 0.0f, cc.velocity.z).magnitude;
 
-        float inputMag = inputs.move.magnitude;
-
         //we adjust the target speed
-        if (currentHorizontalSpeed < targetSpeed - speedOffset ||
-            currentHorizontalSpeed > targetSpeed + speedOffset)
+        if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
         {
-            speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMag, Time.deltaTime * speedChangeRate);
+            speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputs.move.magnitude, Time.deltaTime * speedChangeRate);
             speed = Mathf.Round(speed * 1000) / 1000f; // This will keep it at 3 decimal places.
         }
         else
+        {
             speed = targetSpeed;
-
-        //blend the animation
-       //animationBlend = Mathf.Lerp(animationBlend, targetSpeed, Time.deltaTime * speedChangeRate);
+        } 
 
         //get the normal of the input direction
         Vector3 inputDir = new Vector3(inputs.move.x, 0.0f, inputs.move.y).normalized;
 
         camRotation = Mathf.Atan2(inputDir.x, inputDir.z) * Mathf.Rad2Deg + mainCamera.transform.eulerAngles.y;
+
         Vector3 targetDir = Quaternion.Euler(0.0f, camRotation, 0.0f) * Vector3.forward;
         Vector3 playerRotation = Quaternion.Euler(0.0f, camRotation, 0.0f) * Vector3.forward;
 

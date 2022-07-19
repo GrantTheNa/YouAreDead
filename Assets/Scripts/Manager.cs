@@ -20,6 +20,13 @@ public class Manager : MonoBehaviour
 
     public GameObject spawnPoint;
 
+    //Dialogue
+    public GameObject startingDialogue;
+    public GameObject endDialogue;
+
+    //coins
+    int coinAmount = 0;
+
 
     public void FireCoin() //When Fire coin is collected
     {
@@ -37,7 +44,8 @@ public class Manager : MonoBehaviour
 
     public void CheckCoins() //Check if coins are both collected
     {
-        if (serpentCoin == null && fireCoin == null)
+        coinAmount += 1;
+        if (coinAmount >= 2)
         {
             SetUpEnd();
         }
@@ -45,7 +53,8 @@ public class Manager : MonoBehaviour
 
     private void SetUpEnd() //Make starting area a trigger to end the game
     {
-
+        startingDialogue.SetActive(false);
+        endDialogue.SetActive(true);
     }
 
     public void EndGame() //Trigger that ends the game
