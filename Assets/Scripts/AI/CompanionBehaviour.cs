@@ -23,7 +23,6 @@ public class CompanionBehaviour : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(transform.position, player.transform.position);
-        Debug.Log(distance + "distance");
         
         //if the creature isnt near the player but in interest distance them
         if (distance > interestDist && distance < maxInterest)
