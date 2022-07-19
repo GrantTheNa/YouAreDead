@@ -72,7 +72,7 @@ public class SetOnFire : MonoBehaviour
         if (gameObject.tag == "Player" && !isWet)
         {
             isRespawning = true;
-            manager.KillPlayer(isRespawning);
+            manager.KillPlayer();
         }
 
 

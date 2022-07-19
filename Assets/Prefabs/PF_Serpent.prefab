@@ -536,6 +536,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5507677161765159969}
   - component: {fileID: 5126472543703342745}
+  - component: {fileID: 6337266024044618813}
+  - component: {fileID: 967495927046404394}
   m_Layer: 0
   m_Name: PF_Serpent
   m_TagString: Untagged
@@ -580,6 +582,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &6337266024044618813
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5126472543703342747}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.64, y: 4, z: 4}
+  m_Center: {x: 0, y: -1.67, z: 2.53}
+--- !u!114 &967495927046404394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5126472543703342747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd46bcfca8b50c146911df50ff145f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5353176422276358428
 GameObject:
   m_ObjectHideFlags: 0

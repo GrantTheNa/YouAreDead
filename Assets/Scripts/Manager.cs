@@ -53,18 +53,27 @@ public class Manager : MonoBehaviour
 
     }
 
-    public void KillPlayer(bool isDead)
+    public void KillPlayer()
     {
-        shouldRespawn = isDead;
+        player.GetComponent<PlayerControls>().shouldRespawn = true;
+        Debug.Log("DIE");
+        StartCoroutine(WaitRespawn());
+    }
+
+    //failsafe respawn
+    IEnumerator WaitRespawn()
+    {
+        yield return new WaitForSeconds(0.5f);
+        player.GetComponent<PlayerControls>().shouldRespawn = false;
     }
 
     private void Update()
     {
-        if (shouldRespawn)
-        {
-            Debug.Log("DIE");
-            player.transform.position = spawnPoint.transform.position;
-        }
+        //if (player.transform.position == spawnPoint.transform.position)
+        //{
+        //    player.GetComponent<PlayerControls>().shouldRespawn = false;
+        //    shouldRespawn = false;
+        //}
     }
 
 }
