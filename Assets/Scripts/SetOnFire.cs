@@ -65,7 +65,7 @@ public class SetOnFire : MonoBehaviour
             if (isWet)
                 break;
             timeLeft -= Time.deltaTime;
-            Debug.Log(timeLeft);
+            //Debug.Log(timeLeft);
             yield return null;
         }
 
