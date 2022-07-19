@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_YAADAtlas_Toon
+  m_Name: M_Charon_YAADAtlas
   m_Shader: {fileID: -6465566751694194690, guid: 07b55525a74d7c644b2c64ff40e1c482, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -81,11 +81,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_252a807ff9704fec9827194ef08d54fa: 3
-    - Vector1_2748b200e46d48b9b6daab596227a49a: 0.095
-    - Vector1_49cc101e522c4b4b89f33e9b1299fb18: -0.52
+    - Vector1_2748b200e46d48b9b6daab596227a49a: 0.047
+    - Vector1_49cc101e522c4b4b89f33e9b1299fb18: -0.08
     - Vector1_53ac100a35584feeb3e7cf887a4bd00f: 0.5
-    - Vector1_cba6c966c612426db858cba3a33a15fb: 0.123
-    - Vector1_f8581b22d8c4440eac92b95fc621bb8e: 0.357
+    - Vector1_cba6c966c612426db858cba3a33a15fb: 0.068
+    - Vector1_f8581b22d8c4440eac92b95fc621bb8e: 0.486
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -114,8 +114,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_80db218253b742c78d805cfff581c61d: {r: 0, g: 0, b: 0, a: 0}
-    - Color_8c5684248a3c4f1ebed0a0d140e9dc4b: {r: 0.2977882, g: 0.13665895, b: 0.3490566, a: 0}
-    - Color_f70386baef43415db303bf65fdcb3a0c: {r: 0.2878248, g: 0.7924528, b: 0.71959203, a: 0}
+    - Color_8c5684248a3c4f1ebed0a0d140e9dc4b: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 0}
+    - Color_f70386baef43415db303bf65fdcb3a0c: {r: 0.32907617, g: 0.8207547, b: 0.7483369, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
