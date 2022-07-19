@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
-  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
-  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientSkyColor: {r: 0.7169812, g: 0.091313645, b: 0.091313645, a: 1}
+  m_AmbientEquatorColor: {r: 0.745283, g: 0, b: 0.10229396, a: 1}
+  m_AmbientGroundColor: {r: 1, g: 0.4292453, b: 0.45051545, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: a538f30a23ad6d34a845fb325845ce42, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.17211947, g: 0.10986351, b: 0.15270919, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -602,7 +602,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642074280}
-  m_RootOrder: 91
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: -36.747, z: 0}
 --- !u!73398921 &136717550
 VFXRenderer:
@@ -711,7 +711,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642074280}
-  m_RootOrder: 84
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: -36.747, z: 0}
 --- !u!73398921 &275237708
 VFXRenderer:
@@ -820,7 +820,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642074280}
-  m_RootOrder: 88
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: -36.747, z: 0}
 --- !u!73398921 &293982897
 VFXRenderer:
@@ -1188,7 +1188,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642074280}
-  m_RootOrder: 89
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: -36.747, z: 0}
 --- !u!73398921 &355958168
 VFXRenderer:
@@ -1392,7 +1392,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642074280}
-  m_RootOrder: 86
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: -36.747, z: 0}
 --- !u!73398921 &423702887
 VFXRenderer:
@@ -1765,7 +1765,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642074280}
-  m_RootOrder: 90
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: -36.747, z: 0}
 --- !u!73398921 &499093921
 VFXRenderer:
@@ -1874,7 +1874,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642074280}
-  m_RootOrder: 92
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: -36.747, z: 0}
 --- !u!73398921 &519685748
 VFXRenderer:
@@ -1983,7 +1983,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642074280}
-  m_RootOrder: 85
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0, y: -36.747, z: 0}
 --- !u!73398921 &532962855
 VFXRenderer:
@@ -2525,7 +2525,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642074280}
-  m_RootOrder: 76
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: -36.747, z: 0}
 --- !u!73398921 &633275112
 VFXRenderer:
@@ -2639,7 +2639,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642074280}
-  m_RootOrder: 81
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: -36.747, z: 0}
 --- !u!73398921 &650475721
 VFXRenderer:
@@ -3180,7 +3180,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642074280}
-  m_RootOrder: 78
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: -36.747, z: 0}
 --- !u!73398921 &842567077
 VFXRenderer:
@@ -3289,7 +3289,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642074280}
-  m_RootOrder: 79
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: -36.747, z: 0}
 --- !u!73398921 &847196809
 VFXRenderer:
@@ -3985,7 +3985,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642074280}
-  m_RootOrder: 80
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: -36.747, z: 0}
 --- !u!73398921 &935697956
 VFXRenderer:
@@ -4750,7 +4750,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642074280}
-  m_RootOrder: 77
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: -36.747, z: 0}
 --- !u!73398921 &1133153463
 VFXRenderer:
@@ -5502,7 +5502,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642074280}
-  m_RootOrder: 83
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: -36.747, z: 0}
 --- !u!73398921 &1416075495
 VFXRenderer:
@@ -6125,7 +6125,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642074280}
-  m_RootOrder: 82
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: -36.747, z: 0}
 --- !u!73398921 &1671024582
 VFXRenderer:
@@ -6234,7 +6234,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642074280}
-  m_RootOrder: 87
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: -36.747, z: 0}
 --- !u!73398921 &1783097658
 VFXRenderer:
@@ -6666,6 +6666,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4639430117274450718, guid: 80c5aca2fc3cd7c4f9b845a446cdccea, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8006118293751576188, guid: 80c5aca2fc3cd7c4f9b845a446cdccea, type: 3}
       propertyPath: m_Name
       value: Player (1)
@@ -6718,6 +6722,10 @@ PrefabInstance:
       propertyPath: spawn
       value: 
       objectReference: {fileID: 1931759500}
+    - target: {fileID: 8006118294940768032, guid: 80c5aca2fc3cd7c4f9b845a446cdccea, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80c5aca2fc3cd7c4f9b845a446cdccea, type: 3}
 --- !u!1 &1866192498
