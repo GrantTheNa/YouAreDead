@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b4c2178136d5f194db41a8113b0cb7a9
+guid: 12a5c9bd051d0ee41b5a15ab133637e3
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: T_IvyVines
-    second: {fileID: 2100000, guid: 6854ef80bc51e52498e79e6b39cb8df1, type: 2}
+      name: M_YAADAtlas_Toon
+    second: {fileID: 2100000, guid: eb75d61e62d33bd4d90f047e55c67ce9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1
