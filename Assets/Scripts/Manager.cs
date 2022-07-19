@@ -12,6 +12,7 @@ public class Manager : MonoBehaviour
     public GameObject F_SecretDoor2;
     public GameObject F_Fire;
     public GameObject F_HiddenPath;
+    public Animator F_Door;
 
     //
     public GameObject player;
@@ -34,6 +35,7 @@ public class Manager : MonoBehaviour
         F_SecretDoor2.SetActive(false);
         F_Fire.SetActive(false);
         F_HiddenPath.SetActive(true);
+        F_Door.SetTrigger("Close");
         CheckCoins();
     }
 

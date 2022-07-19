@@ -5,6 +5,7 @@ using UnityEngine;
 public class FireWall : MonoBehaviour
 {
     public GameObject[] flamePrefabs;
+    public Animator door;
 
     //Turn on Area
     public GameObject showRoom;
@@ -31,6 +32,6 @@ public class FireWall : MonoBehaviour
     {
 
         showRoom.SetActive(true);
-        Destroy(this.gameObject);
+        door.SetTrigger("Open");
     }
 }
