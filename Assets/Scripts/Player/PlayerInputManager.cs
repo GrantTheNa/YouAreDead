@@ -31,7 +31,6 @@ public class PlayerInputManager : MonoBehaviour
     public void MoveInputs(Vector2 a_moveDirection)
     {
         move = a_moveDirection;
-        Debug.Log(move);
     }
 
     public void RunInput(bool a_runState)
@@ -53,12 +52,14 @@ public class PlayerInputManager : MonoBehaviour
     #region Functions Created For Connecting to Unity Input System
     public void OnMove(InputValue a_value)
     {
-        MoveInputs(a_value.Get<Vector2>());   
+        MoveInputs(a_value.Get<Vector2>());
+        //Debug.Log(a_value);
     }
 
-    public void OnRun(InputValue a_value)
+    public void OnSprint(InputValue a_value)
     {
         RunInput(a_value.isPressed);
+        Debug.Log("is running");
     }
 
     public void OnInteract(InputValue a_value)
