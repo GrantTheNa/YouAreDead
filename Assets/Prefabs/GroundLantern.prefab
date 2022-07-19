@@ -1291,6 +1291,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireModel: {fileID: 4522429247355743801}
+  onFire: 0
+  permFire: 0
+  timer: 8
+  flameDoor: {fileID: 0}
+  isWet: 0
 --- !u!1 &4522429247355743801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,7 +1307,7 @@ GameObject:
   - component: {fileID: 1549969924769785093}
   - component: {fileID: 1419107077807964727}
   - component: {fileID: 6283683004239736456}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: GreyBoxFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
