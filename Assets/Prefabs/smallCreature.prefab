@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7172093000810695789}
   - component: {fileID: 7172093000810695787}
   - component: {fileID: 7172093000810695788}
-  - component: {fileID: 7172093000810695786}
+  - component: {fileID: 1182766309}
   m_Layer: 0
   m_Name: smallCreature
   m_TagString: Untagged
@@ -44,7 +44,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.8
-  m_Speed: 5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -68,9 +68,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5526d656921f4c46a26913ef122c60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkToPlayerDist: 10
-  distInterest: 50
---- !u!54 &7172093000810695786
+  startFollowingWithinDist: 9
+  stopsFollowingAtDist: 30
+--- !u!54 &1182766309
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,6 +93,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7172093000810695789}
     m_Modifications:
+    - target: {fileID: 3063326749504809963, guid: 6c4365a5422fae342bcc4c47b3d915e0, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4280289643102539090, guid: 6c4365a5422fae342bcc4c47b3d915e0, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
