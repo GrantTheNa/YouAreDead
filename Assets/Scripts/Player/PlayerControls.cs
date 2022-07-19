@@ -11,6 +11,7 @@ public class PlayerControls : MonoBehaviour
 
     [Space(10)]
 
+    public float heightDeath = -5.0f;
     public float walkSpeed = 4.0f;
     public float runSpeed = 8.0f;
     public float speedOffset = 2.0f;
@@ -21,7 +22,7 @@ public class PlayerControls : MonoBehaviour
     public bool shouldRespawn;
     public bool headMode;
     public bool canPlayerMove = true;
-
+    
     // Animator animator;
     Animator animator;
     CharacterController cc;
@@ -53,6 +54,7 @@ public class PlayerControls : MonoBehaviour
         ccHeight = cc.height;
         ccRadius = cc.radius;
 
+        //set the player model to have the correct items turned on
         if (playerArm != null)
             playerArm.SetActive(true);
 
@@ -61,19 +63,37 @@ public class PlayerControls : MonoBehaviour
 
         if (playerModel != null)
             playerModel.SetActive(true);
+
+        //HeadRollTest();
     }
 
     void Update()
     {
         if (canPlayerMove)
         {
-            if (headMode)          
+            if (!headMode)          
                 MovePlayer();
             else           
-                MoveHead();              
+                MoveHead();                            
         }           
-        if (shouldRespawn)
+
+        //respawn player and height check
+        if (shouldRespawn || gameObject.transform.position.y < heightDeath)
             RespawnPlayer();
+    }
+
+    void HeadRollTest()
+    {
+        headMode = true;
+
+        if (playerArm != null)
+            playerArm.SetActive(true);
+
+        if (playerHead2 != null)
+            playerHead2.SetActive(true);
+
+        if (playerModel != null)
+            playerModel.SetActive(false);      
     }
 
     void RespawnPlayer()
@@ -90,9 +110,32 @@ public class PlayerControls : MonoBehaviour
 
     void MoveHead()
     {
-        //Rotate Head
+        // get the normal of the input direction
+        Vector3 inputDir = new Vector3(inputs.move.x, 0.0f, inputs.move.y).normalized;
+        camRotation = Mathf.Atan2(inputDir.x, inputDir.z) * Mathf.Rad2Deg + mainCamera.transform.eulerAngles.y;
 
-        //move like your on ice
+        //check if the user is sprinting
+        speed = inputs.run ? runSpeed : walkSpeed;
+        //check if player stops pressing a key
+        if (inputs.move == Vector2.zero)
+            speed = 0.0f;
+
+        Vector3 targetDir = Quaternion.Euler(0.0f, camRotation, 0.0f) * Vector3.forward;
+        Vector3 playerRotation = Quaternion.Euler(0.0f, camRotation, 0.0f) * Vector3.forward;
+
+        //rotate the player when key pressed
+        if (inputs.move != Vector2.zero)      
+            playerHead2.transform.rotation = Quaternion.Slerp(playerHead2.transform.rotation,
+               Quaternion.LookRotation(playerRotation), 0.15f);
+            
+        //apply gravity
+        if (cc.isGrounded)
+            ySpeed = 0;
+        else
+            ySpeed = Physics.gravity.y;
+
+        cc.Move(targetDir.normalized * (speed * Time.deltaTime) +
+            new Vector3(0.0f, ySpeed, 0.0f) * Time.deltaTime);
     }
 
     void MovePlayer()
@@ -176,5 +219,8 @@ public class PlayerControls : MonoBehaviour
 
         if (playerHead2 != null)
             playerHead2.SetActive(false);
+
+        if (playerModel != null)
+            playerModel.SetActive(true);
     }
 }
