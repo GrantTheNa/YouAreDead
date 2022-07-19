@@ -32,11 +32,10 @@ public class PlayerControls : MonoBehaviour
     float speed;
     float camRotation = 0;
     float ySpeed;
-    float animationBlend;
+    bool isRunning;
+
     float ccHeight;
     float ccRadius;
-
-    bool hasAnimator;
 
     public GameObject spawn;
 
@@ -48,9 +47,10 @@ public class PlayerControls : MonoBehaviour
 
     void Start()
     {
-        hasAnimator = TryGetComponent(out animator);
+        animator = GetComponentInChildren<Animator>();
         inputs = GetComponent<PlayerInputManager>();
         cc = GetComponent<CharacterController>();
+
         ccHeight = cc.height;
         ccRadius = cc.radius;
     }
@@ -58,30 +58,23 @@ public class PlayerControls : MonoBehaviour
     void Update()
     {
         MovePlayer();
-        PlayerInteract();
         RespawnPlayer();
     }
 
     void RespawnPlayer()
     {
-        //shouldRespawn = ShouldRespawn();
-
-        if (shouldRespawn)
-        {
-            //change this line to be the transform of the spawn object instead of a new vector 3
+        if (shouldRespawn)      
             gameObject.transform.position = spawn.transform.position;
-            Debug.Log("Respawn");
-        }
     }
 
-    void PlayerInteract()
+    void PlayerAnimation(bool isGrabbing, float playerSpeed)
     {
-        bool playerInteract = inputs.interact;
-        if (playerInteract)
-        {
-            //check if player is near object 
-            //do thing
-        }
+        animator.SetBool("grab", isGrabbing);
+
+        animator.SetFloat("movement", playerSpeed);
+
+        animator.SetBool("isRunning", playerSpeed == runSpeed);
+
     }
 
     void MovePlayer()
@@ -109,14 +102,14 @@ public class PlayerControls : MonoBehaviour
             speed = targetSpeed;
 
         //blend the animation
-        animationBlend = Mathf.Lerp(animationBlend, targetSpeed, Time.deltaTime * speedChangeRate);
+       //animationBlend = Mathf.Lerp(animationBlend, targetSpeed, Time.deltaTime * speedChangeRate);
 
         //get the normal of the input direction
         Vector3 inputDir = new Vector3(inputs.move.x, 0.0f, inputs.move.y).normalized;
 
         camRotation = Mathf.Atan2(inputDir.x, inputDir.z) * Mathf.Rad2Deg + mainCamera.transform.eulerAngles.y;
         Vector3 targetDir = Quaternion.Euler(0.0f, camRotation, 0.0f) * Vector3.forward;
-        Vector3 playerRotation = Quaternion.Euler(0.0f, camRotation - 90, 0.0f) * Vector3.forward;
+        Vector3 playerRotation = Quaternion.Euler(0.0f, camRotation, 0.0f) * Vector3.forward;
 
         //rotate the player
         if (inputs.move != Vector2.zero)               
@@ -132,14 +125,7 @@ public class PlayerControls : MonoBehaviour
         cc.Move(targetDir.normalized * (speed * Time.deltaTime) +
             new Vector3(0.0f, ySpeed, 0.0f) * Time.deltaTime);
 
-        //update animator
-        //if (hasAnimator)
-        //{
-           // Vector2 move = new Vector2(forwardVelocity, currentHorizontalSpeed).normalized;
-           // animator.SetFloat("Speed", animationBlend);
-           // animator.SetFloat("SpeedMultiplier", inputMag);
-        //}
-        //=============
+        PlayerAnimation(inputs.interact, targetSpeed);
     }
 
     public void Eaten()
