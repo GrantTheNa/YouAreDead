@@ -12945,6 +12945,10 @@ PrefabInstance:
       propertyPath: fireModel
       value: 
       objectReference: {fileID: 1187715259}
+    - target: {fileID: 4107418967746614666, guid: 80c5aca2fc3cd7c4f9b845a446cdccea, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8006118293751576188, guid: 80c5aca2fc3cd7c4f9b845a446cdccea, type: 3}
       propertyPath: m_Name
       value: Player (1)
