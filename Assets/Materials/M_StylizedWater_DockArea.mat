@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_StylizedWater
+  m_Name: M_StylizedWater_DockArea
   m_Shader: {fileID: -6465566751694194690, guid: 832914d0178ac3343a53494622a4f742, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -77,13 +77,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_10f8d36f7c984045a26895c7ceb39ca0: 0.3
-    - Vector1_24d6f0fb611e4544bb810e459da04102: -81.77
+    - Vector1_24d6f0fb611e4544bb810e459da04102: -154.6
     - Vector1_26ca8a0f6bae4cb0b1573cbe26c1b0aa: 0.3
-    - Vector1_8d797510e8e9408794e96b7089de6c5b: 0.79
-    - Vector1_a06b3c7ad9fa49328b0f82f44cd0df59: 0.96
-    - Vector1_b2781c7b184344c9924ea9e6fd87e1c3: 0.77
-    - Vector1_c3445bcc29ab49f98cccb704f6816dd0: 2
-    - Vector1_c94adb2253a54ed38e283a0edb8fb282: -0.02
+    - Vector1_8d797510e8e9408794e96b7089de6c5b: 1.79
+    - Vector1_a06b3c7ad9fa49328b0f82f44cd0df59: 0.98
+    - Vector1_b2781c7b184344c9924ea9e6fd87e1c3: 3.1
+    - Vector1_c3445bcc29ab49f98cccb704f6816dd0: 2.27
+    - Vector1_c94adb2253a54ed38e283a0edb8fb282: -0.01
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -111,9 +111,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_64ef3cab2a1140ee9c65a2479cd5d6c7: {r: 0.24350145, g: 0.009567461, b: 0.4056604, a: 0.54901963}
-    - Color_6861d01731334c4e8a49871b99b0a241: {r: 0.84635323, g: 0.74092203, b: 0.8490566, a: 1}
-    - Color_a80103dd7c8f4509b9152871376686d6: {r: 0.8650734, g: 0.6027501, b: 0.99056596, a: 0.75686276}
+    - Color_64ef3cab2a1140ee9c65a2479cd5d6c7: {r: 0.40392157, g: 0.007843133, b: 0.13491523, a: 0.54901963}
+    - Color_6861d01731334c4e8a49871b99b0a241: {r: 0.754717, g: 0.32395872, b: 0.32395872, a: 1}
+    - Color_a80103dd7c8f4509b9152871376686d6: {r: 0.8773585, g: 0.35811132, b: 0.0041384934, a: 0.75686276}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
