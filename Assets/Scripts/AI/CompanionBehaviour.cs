@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class CompanionBehaviour : MonoBehaviour
 {
-    public float interestDist = 10;
-    public float maxInterest = 50;
+    public float startFollowingWithinDist = 10;
+    public float stopsFollowingAtDist = 50;
 
     GameObject player;
     Animator animator;
@@ -23,25 +23,21 @@ public class CompanionBehaviour : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(transform.position, player.transform.position);
-        
-        //if the creature isnt near the player but in interest distance them
-        if (distance > interestDist && distance < maxInterest)
-        {
-            GetComponent<NavMeshAgent>().destination = player.transform.position + Vector3.right;
 
+        //the creature is to far away
+        if (distance > startFollowingWithinDist)
+        {          
             //tell animator to walk/hop
-            if (animator != null)          
-                animator.SetBool("isMoving", true);        
+            if (animator != null)
+                animator.SetBool("isMoving", true);
         }
 
-        //if the creature is at the player then idle
-        else if (distance < interestDist)
+        //if the creature is close
+        else if (distance < startFollowingWithinDist)
         {
-            //tell animator to idle
-            if (animator != null)         
+            GetComponent<NavMeshAgent>().destination = player.transform.position + Vector3.right;
+            if (animator != null)
                 animator.SetBool("isMoving", false);
-           
-            //create a small chance of it doing something funny
         }
     }
 }
