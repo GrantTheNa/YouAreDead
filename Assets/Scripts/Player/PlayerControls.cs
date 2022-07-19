@@ -127,7 +127,7 @@ public class PlayerControls : MonoBehaviour
 
         PlayerAnimation(inputs.interact, targetSpeed);
     }
-
+    
     public void Eaten()
     {
         headMode = true;
