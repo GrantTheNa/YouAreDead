@@ -409,9 +409,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -292.0,
-            "y": 845.9999389648438,
-            "width": 118.99999237060547,
+            "x": -461.0000305175781,
+            "y": 435.0000305175781,
+            "width": 119.00000762939453,
             "height": 77.0
         }
     },
@@ -748,7 +748,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "AlphaClipThreshold",
     "m_StageCapability": 2,
-    "m_Value": 1.0,
+    "m_Value": 0.5,
     "m_DefaultValue": 0.5,
     "m_Labels": []
 }
@@ -824,9 +824,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -54.0000114440918,
-            "y": 850.0,
-            "width": 169.99998474121095,
+            "x": -215.99998474121095,
+            "y": 418.0,
+            "width": 170.00001525878907,
             "height": 142.0
         }
     },
