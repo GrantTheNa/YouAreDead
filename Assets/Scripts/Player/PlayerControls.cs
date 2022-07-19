@@ -4,17 +4,16 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerControls : MonoBehaviour
 {
-    [Header("Player Config")]
-
+    [Header("Player Parts")]
     public GameObject playerModel;
+    public GameObject playerHead2;
+    public GameObject playerArm;
+
+    [Space(10)]
 
     public float walkSpeed = 4.0f;
     public float runSpeed = 8.0f;
-    public float speedOffset = 1.0f;
-   
-    [Tooltip("Player turn rate")]
-    [Range(0.0f, 0.4f)]
-    public float rotationSmoothRate = 0.1f;
+    public float speedOffset = 2.0f;
 
     [Tooltip("Player rate of speed change")]
     public float speedChangeRate = 10.0f;
@@ -53,20 +52,33 @@ public class PlayerControls : MonoBehaviour
 
         ccHeight = cc.height;
         ccRadius = cc.radius;
+
+        if (playerArm != null)
+            playerArm.SetActive(true);
+
+        if (playerHead2 != null)
+            playerHead2.SetActive(false);
+
+        if (playerModel != null)
+            playerModel.SetActive(true);
     }
 
     void Update()
     {
-        if (canPlayerMove)       
-            MovePlayer();
-        
+        if (canPlayerMove)
+        {
+            if (headMode)          
+                MovePlayer();
+            else           
+                MoveHead();              
+        }           
         if (shouldRespawn)
             RespawnPlayer();
     }
 
     void RespawnPlayer()
-    { 
-            gameObject.transform.position = spawn.transform.position;
+    {
+        gameObject.transform.position = spawn.transform.position;
     }
 
     void PlayerAnimation(bool isGrabbing, float playerSpeed)
@@ -76,16 +88,22 @@ public class PlayerControls : MonoBehaviour
         animator.SetBool("isRunning", playerSpeed == runSpeed);
     }
 
+    void MoveHead()
+    {
+        //Rotate Head
+
+        //move like your on ice
+    }
+
     void MovePlayer()
     {
         //check if the user is sprinting
         float targetSpeed = inputs.run ? runSpeed : walkSpeed;
 
         //check if player stops pressing a key
-        if (inputs.move == Vector2.zero)      
+        if (inputs.move == Vector2.zero)
             targetSpeed = 0.0f;
-        
- 
+
         //grab the players current speed
         float currentVel = new Vector3(cc.velocity.x, 0.0f, cc.velocity.z).magnitude;
 
@@ -98,7 +116,7 @@ public class PlayerControls : MonoBehaviour
         else
         {
             speed = targetSpeed;
-        } 
+        }
 
         //get the normal of the input direction
         Vector3 inputDir = new Vector3(inputs.move.x, 0.0f, inputs.move.y).normalized;
@@ -109,12 +127,12 @@ public class PlayerControls : MonoBehaviour
         Vector3 playerRotation = Quaternion.Euler(0.0f, camRotation, 0.0f) * Vector3.forward;
 
         //rotate the player
-        if (inputs.move != Vector2.zero)               
-            playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, 
+        if (inputs.move != Vector2.zero)
+            playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation,
                 Quaternion.LookRotation(playerRotation), 0.15f);
-        
+
         //apply gravity
-        if (cc.isGrounded)      
+        if (cc.isGrounded)
             ySpeed = 0;
         else
             ySpeed = Physics.gravity.y;
@@ -124,12 +142,27 @@ public class PlayerControls : MonoBehaviour
 
         PlayerAnimation(inputs.interact, targetSpeed);
     }
-    
-    public void Eaten()
+
+    public void BodyEaten()
     {
         headMode = true;
         cc.height = 0.01f;
         cc.radius = 0.1f;
+
+        if (playerArm != null)
+            playerArm.SetActive(false);
+
+        if (playerHead2 != null)
+            playerHead2.SetActive(true);
+
+        if (playerModel != null)
+            playerModel.SetActive(false);
+    }
+
+    public void ArmEaten()
+    {
+        if (playerArm != null)
+            playerArm.SetActive(false);
     }
 
     public void Heal()
@@ -137,5 +170,11 @@ public class PlayerControls : MonoBehaviour
         headMode = false;
         cc.height = ccHeight;
         cc.radius = ccRadius;
+
+        if (playerArm != null)
+            playerArm.SetActive(true);
+
+        if (playerHead2 != null)
+            playerHead2.SetActive(false);
     }
 }
