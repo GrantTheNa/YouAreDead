@@ -45,8 +45,11 @@ public class SoundManager : MonoBehaviour
                 s.source.spatialBlend = s.spatialBlend;
                 s.source.minDistance = 1f;
                 s.source.maxDistance = 4f;
+                s.source.loop = s.loop;
                 s.source.Play();
-                soundGameObject.AddComponent<DestroySound>();
+                if (!s.source.loop)
+                    soundGameObject.AddComponent<DestroySound>();
+
             }
 
         }
@@ -64,8 +67,10 @@ public class SoundManager : MonoBehaviour
                 s.source.volume = s.volume;
                 float varient = Random.Range(1, s.pitchVarient);
                 s.source.pitch = s.pitch * varient;
+                s.source.loop = s.loop;
                 s.source.Play();
-                soundGameObject.AddComponent<DestroySound>();
+                if (!s.source.loop)
+                    soundGameObject.AddComponent<DestroySound>();
             }
         }
     }
