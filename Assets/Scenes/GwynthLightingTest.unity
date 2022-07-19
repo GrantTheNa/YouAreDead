@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.103773594, g: 0.022027416, b: 0.02288988, a: 1}
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0.20754719, g: 0.053844795, b: 0.2012753, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_AmbientMode: 1
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 0ffaa0b7117ba8c47a9d05ae701d4b4d, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1180114990}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.2602542, g: 0.061981164, b: 0.061981164, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4403,6 +4403,10 @@ PrefabInstance:
     - target: {fileID: 8006118293751576190, guid: 80c5aca2fc3cd7c4f9b845a446cdccea, type: 3}
       propertyPath: speedOffset
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006118294940768032, guid: 80c5aca2fc3cd7c4f9b845a446cdccea, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8006118294940768038, guid: 80c5aca2fc3cd7c4f9b845a446cdccea, type: 3}
       propertyPath: m_ClearFlags
