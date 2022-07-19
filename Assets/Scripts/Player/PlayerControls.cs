@@ -20,7 +20,7 @@ public class PlayerControls : MonoBehaviour
     public float speedChangeRate = 10.0f;
 
     public bool shouldRespawn;
-    public bool head;
+    public bool headMode;
 
     // Animator animator;
     Animator animator;
@@ -144,8 +144,15 @@ public class PlayerControls : MonoBehaviour
 
     public void Eaten()
     {
-        head = true;
-        cc.height = 0.1f;
-        cc.radius = 0.1f;
+        headMode = true;
+        cc.height = 0.01f;
+        cc.radius = 0.5f;
+    }
+
+    public void Heal()
+    {
+        headMode = false;
+        cc.height = ccHeight;
+        cc.radius = ccRadius;
     }
 }
