@@ -53,7 +53,6 @@ public class PlayerInputManager : MonoBehaviour
     public void OnMove(InputValue a_value)
     {
         MoveInputs(a_value.Get<Vector2>());
-        //Debug.Log(a_value);
     }
 
     public void OnSprint(InputValue a_value)
