@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class TestHealBody : MonoBehaviour
 {
-    public PlayerControls playerObject;
+    private PlayerControls playerObject;
+
+    private void Start()
+    {
+        playerObject = FindObjectOfType<PlayerControls>();
+    }
 
     void OnTriggerEnter(Collider other)
     {
