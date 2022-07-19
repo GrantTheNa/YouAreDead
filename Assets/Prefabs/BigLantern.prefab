@@ -1281,6 +1281,8 @@ MonoBehaviour:
   onFire: 0
   permFire: 1
   timer: 8
+  flameDoor: {fileID: 0}
+  isWet: 0
 --- !u!65 &3904846981332556822
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1306,7 +1308,7 @@ GameObject:
   - component: {fileID: 274840000691437191}
   - component: {fileID: 5772174430432507040}
   - component: {fileID: 7726285850362126381}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1384,7 +1386,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6880986012797021359}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

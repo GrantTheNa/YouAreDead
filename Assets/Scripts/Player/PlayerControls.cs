@@ -19,6 +19,8 @@ public class PlayerControls : MonoBehaviour
     [Tooltip("Player rate of speed change")]
     public float speedChangeRate = 10.0f;
 
+    public bool shouldRespawn;
+
     // Animator animator;
     Animator animator;
     CharacterController cc;
@@ -50,6 +52,18 @@ public class PlayerControls : MonoBehaviour
     {
         MovePlayer();
         PlayerInteract();
+        RespawnPlayer();
+    }
+
+    void RespawnPlayer()
+    {
+        //shouldRespawn = ShouldRespawn();
+
+        if (shouldRespawn)
+        {
+            //change this line to be the transform of the spawn object instead of a new vector 3
+            gameObject.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+        }
     }
 
     void PlayerInteract()
@@ -59,9 +73,6 @@ public class PlayerControls : MonoBehaviour
         {
             //check if player is near object 
             //do thing
-
-
-            Debug.Log("interact");
         }
     }
 
@@ -104,7 +115,6 @@ public class PlayerControls : MonoBehaviour
             playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, 
                 Quaternion.LookRotation(playerRotation), 0.15f);
         
-
         //apply gravity
         if (cc.isGrounded)      
             ySpeed = 0;
