@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class TestHealBody : MonoBehaviour
 {
+    public PlayerControls playerObject;
+
     void OnTriggerEnter(Collider other)
     {
-        PlayerControls player = other.GetComponent<PlayerControls>();
+        var player = other.GetComponent<Rigidbody>();
 
         if (player != null)
-            player.Heal();
+            playerObject.Heal();
     }
 }

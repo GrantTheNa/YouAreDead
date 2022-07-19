@@ -23,7 +23,6 @@ public class PlayerControls : MonoBehaviour
     public bool headMode;
     public bool canPlayerMove = true;
     
-
     // Animator animator;
     Animator animator;
     CharacterController cc;
@@ -99,9 +98,6 @@ public class PlayerControls : MonoBehaviour
 
     void RespawnPlayer()
     {
-        //add a cut scene?
-        //fade the screen black?
-        //=================
         gameObject.transform.position = spawn.transform.position;
     }
 
@@ -225,6 +221,6 @@ public class PlayerControls : MonoBehaviour
             playerHead2.SetActive(false);
 
         if (playerModel != null)
-            playerModel.SetActive(false);
+            playerModel.SetActive(true);
     }
 }
