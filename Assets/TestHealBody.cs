@@ -5,6 +5,7 @@ using UnityEngine;
 public class TestHealBody : MonoBehaviour
 {
     private PlayerControls playerObject;
+    public ParticleSystem healParticle;
 
     private void Start()
     {
@@ -17,5 +18,7 @@ public class TestHealBody : MonoBehaviour
 
         if (player != null)
             playerObject.Heal();
+
+        Instantiate(healParticle, other.gameObject.transform);
     }
 }
