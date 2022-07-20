@@ -30,8 +30,8 @@ public class FireWall : MonoBehaviour
 
     private void DestroyDoor()
     {
-
-        showRoom.SetActive(true);
+        if (showRoom != null)
+            showRoom.SetActive(true);
         door.SetActive(false);
     }
 }
