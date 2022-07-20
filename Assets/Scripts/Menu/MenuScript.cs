@@ -4,12 +4,14 @@ using UnityEngine.SceneManagement;
 public class MenuScript : MonoBehaviour
 {
     public GameObject menuScreen;
+    public PlayerControls player;
+    
     // Start is called before the first frame update
     void Start()
     {
-        menuScreen.SetActive(true);
+        menuScreen.gameObject.SetActive(true);
+        player.pausedState = true;
     }
-
 
     public void Quit()
     {
@@ -19,9 +21,8 @@ public class MenuScript : MonoBehaviour
 
     public void Resume()
     {
-        menuScreen.SetActive(false);
-        //unpause the player
-
+            player.UnPause();
+            Debug.Log("Resumed");
     }
 
     public void Restart(int sceneNumber)

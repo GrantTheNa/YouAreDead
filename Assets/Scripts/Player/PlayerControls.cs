@@ -12,7 +12,7 @@ public class PlayerControls : MonoBehaviour
     [Header("Player interactions")]
     public GameObject spawn;
     public GameObject MenuUI;
-    public bool paused;
+    public bool pausedState;
 
     [Space(10)]
 
@@ -41,8 +41,6 @@ public class PlayerControls : MonoBehaviour
 
     float ccHeight;
     float ccRadius;
-
-    
 
     void Awake()
     {
@@ -84,25 +82,30 @@ public class PlayerControls : MonoBehaviour
         if (shouldRespawn || gameObject.transform.position.y < heightDeath)
             RespawnPlayer();
 
-        if (paused)
+        HasPlayerPausedGame();
+    }
+
+    void HasPlayerPausedGame()
+    { 
+        //player pressed pause
+        if (inputs.pause)
         {
+            pausedState = true;
             MenuUI.SetActive(true);
             canPlayerMove = false;
         }
     }
 
-    void HeadRollTest()
+    public void PauseGame()
     {
-        headMode = true;
+        pausedState = true;
+        canPlayerMove = false;
+    }
 
-        if (playerArm != null)
-            playerArm.SetActive(true);
-
-        if (playerHead2 != null)
-            playerHead2.SetActive(true);
-
-        if (playerModel != null)
-            playerModel.SetActive(false);      
+    public void UnPause()
+    {
+        pausedState = false;
+        canPlayerMove = true;
     }
 
     void RespawnPlayer()
