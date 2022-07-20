@@ -10,6 +10,7 @@ public class CompanionBehaviour : MonoBehaviour
 
     GameObject player;
     Animator animator;
+    PlayerControls playerControls;
 
     void Start()
     {
@@ -18,15 +19,31 @@ public class CompanionBehaviour : MonoBehaviour
             Debug.Log("Player isnt tagged correctly");
 
         animator = GetComponentInChildren<Animator>();
+
+        playerControls = player.GetComponent<PlayerControls>();
+
+
     }
 
     void Update()
     {
+        MoveToPlayer();
+    }
+
+    void MoveToPlayer()
+    {
+        if (playerControls.GetPausedState())
+        {
+            GetComponent<NavMeshAgent>().destination = transform.position;
+            animator.SetBool("isMoving", false);
+            return;
+        }
+
         float distance = Vector3.Distance(transform.position, player.transform.position);
 
         //the creature is to far away
         if (distance > startFollowingWithinDist)
-        {          
+        {
             //tell animator to walk/hop
             if (animator != null)
                 animator.SetBool("isMoving", false);

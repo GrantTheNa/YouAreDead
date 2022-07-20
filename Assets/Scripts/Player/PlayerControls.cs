@@ -66,6 +66,8 @@ public class PlayerControls : MonoBehaviour
 
         if (playerModel != null)
             playerModel.SetActive(true);
+
+        PauseGame();
     }
 
     void Update()
@@ -106,6 +108,11 @@ public class PlayerControls : MonoBehaviour
     {
         pausedState = false;
         canPlayerMove = true;
+    }
+
+    public bool GetPausedState()
+    {
+        return pausedState;
     }
 
     void RespawnPlayer()
