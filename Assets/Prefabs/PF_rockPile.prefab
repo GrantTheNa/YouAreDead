@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -17.311
       objectReference: {fileID: 0}
+    - target: {fileID: 2316170096632213623, guid: a6c4453951833e340b59a172b525abdd, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5089227110525651430, guid: a6c4453951833e340b59a172b525abdd, type: 3}
       propertyPath: m_Name
       value: PF_Rock_02
@@ -173,6 +177,10 @@ PrefabInstance:
     - target: {fileID: 4098450296453776102, guid: 9c1cc5714f4dd41478937efcac3ec46e, type: 3}
       propertyPath: m_Name
       value: PF_Rock_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7174249788685089321, guid: 9c1cc5714f4dd41478937efcac3ec46e, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c1cc5714f4dd41478937efcac3ec46e, type: 3}
