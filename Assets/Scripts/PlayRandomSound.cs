@@ -41,6 +41,12 @@ public class PlayRandomSound : MonoBehaviour
             case 4:
                 soundManager.Play2D("Raven");
                 break;
+            case 5:
+                soundManager.Play2D("Thunder_1");
+                break;
+            case 6:
+                soundManager.Play2D("Thunder_2");
+                break;
         }
 
         StartCoroutine(Wait());
