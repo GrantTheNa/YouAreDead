@@ -12,7 +12,7 @@ public class PlayerControls : MonoBehaviour
     [Header("Player interactions")]
     public GameObject spawn;
     public GameObject MenuUI;
-    public bool paused;
+    public bool pausedState;
 
     [Space(10)]
 
@@ -84,11 +84,29 @@ public class PlayerControls : MonoBehaviour
         if (shouldRespawn || gameObject.transform.position.y < heightDeath)
             RespawnPlayer();
 
-        if (paused)
+        HasPlayerPausedGame();
+    }
+
+    void HasPlayerPausedGame()
+    { 
+        if (inputs.pause)
         {
+            pausedState = true;
             MenuUI.SetActive(true);
             canPlayerMove = false;
         }
+    }
+
+    public void PauseGame()
+    {
+        pausedState = true;
+        canPlayerMove = false;
+    }
+
+    public void UnPause()
+    {
+        pausedState = false;
+        canPlayerMove = true;
     }
 
     void HeadRollTest()
