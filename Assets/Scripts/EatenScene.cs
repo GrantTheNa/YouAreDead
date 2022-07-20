@@ -27,11 +27,8 @@ public class EatenScene : MonoBehaviour
 
         monster.SetTrigger("Trig_EatingCutscene");
         StartCoroutine(DeleteMonster(animator));
+        StartCoroutine(BLOOD(other));
 
-        //spawn blood test
-        if (bloodParticle != null)
-            Instantiate(bloodParticle, other.gameObject.transform);
-        
     }
 
     IEnumerator DeleteMonster(Animator anim)
@@ -43,5 +40,15 @@ public class EatenScene : MonoBehaviour
         Destroy(monsterObj);
 
         anim.SetBool("isScared", false);
+
+    }
+
+    IEnumerator BLOOD(Collider other)
+    {
+        yield return new WaitForSeconds(2.19f);
+        //spawn blood test
+        if (bloodParticle != null)
+            Instantiate(bloodParticle, other.gameObject.transform);
+
     }
 }
