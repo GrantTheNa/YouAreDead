@@ -392,6 +392,7 @@ MonoBehaviour:
   monsterObj: {fileID: 8499627786706506592}
   monster: {fileID: 8499627786706506594}
   animation: {fileID: -437466939207928688, guid: 9a797706bb89b1740930c3fb0cc3e652, type: 3}
+  bloodParticle: {fileID: 4947132890540253732, guid: 05f162e9859b4db4c814de0eeed5d60b, type: 3}
   pc: {fileID: 0}
 --- !u!1 &5362654588656896844
 GameObject:
