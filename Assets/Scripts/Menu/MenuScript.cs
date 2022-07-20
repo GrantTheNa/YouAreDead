@@ -10,7 +10,7 @@ public class MenuScript : MonoBehaviour
     void Start()
     {
         menuScreen.gameObject.SetActive(true);
-        player.pausedState = true;
+        player.PauseGame();
     }
 
     public void Quit()
