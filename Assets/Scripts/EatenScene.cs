@@ -8,9 +8,12 @@ public class EatenScene : MonoBehaviour
     public GameObject monsterObj;
     public Animator monster;
     public AnimationClip animation;
+    public ParticleSystem bloodParticle;
 
     //Player
     public PlayerControls pc;
+
+    Animator animator;
 
     private void Start()
     {
@@ -19,16 +22,33 @@ public class EatenScene : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        animator = other.gameObject.GetComponentInChildren<Animator>();
+        animator.SetBool("isScared", true);
+
         monster.SetTrigger("Trig_EatingCutscene");
-        StartCoroutine(DeleteMonster());
+        StartCoroutine(DeleteMonster(animator));
+        StartCoroutine(BLOOD(other));
+
     }
 
-    IEnumerator DeleteMonster()
+    IEnumerator DeleteMonster(Animator anim)
     {
         pc.canPlayerMove = false;
         yield return new WaitForSeconds(animation.length);
         pc.ArmEaten();
         pc.canPlayerMove = true;
         Destroy(monsterObj);
+
+        anim.SetBool("isScared", false);
+
+    }
+
+    IEnumerator BLOOD(Collider other)
+    {
+        yield return new WaitForSeconds(2.19f);
+        //spawn blood test
+        if (bloodParticle != null)
+            Instantiate(bloodParticle, other.gameObject.transform);
+
     }
 }
