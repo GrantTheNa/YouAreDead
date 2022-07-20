@@ -292,17 +292,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 594543509165470264, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
   m_PrefabInstance: {fileID: 594543509280871167}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &80892026 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 594543509165470263, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
-  m_PrefabInstance: {fileID: 594543509280871167}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80892024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &80892027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1651,7 +1640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1554588066}
+  selectedFlowchart: {fileID: 594543509280871168}
 --- !u!4 &724447008
 Transform:
   m_ObjectHideFlags: 1
@@ -4345,6 +4334,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 594543508421383987, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
   m_PrefabInstance: {fileID: 594543509280871167}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1288422861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288422860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 10
+  indentLevel: 0
+  _sceneName:
+    stringRef: {fileID: 0}
+    stringVal: RubyGreyBox
+  loadingImage: {fileID: 0}
+  sceneNameOLD: 
 --- !u!114 &1288422862
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4360,6 +4368,33 @@ MonoBehaviour:
   itemId: 7
   indentLevel: 0
   storyText: Doesn't seem you will be coming along afterall.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &1288422863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288422860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 9
+  indentLevel: 0
+  storyText: The cycle continues, again.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -5260,17 +5295,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 594543508146778977, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
   m_PrefabInstance: {fileID: 594543509280871167}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1554588066 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 594543508146778976, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
-  m_PrefabInstance: {fileID: 594543509280871167}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554588062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1554588071 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 594543508146778967, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
@@ -5320,7 +5344,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: ...
   description: 
-  character: {fileID: 80892026}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -7973,14 +7997,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: /////Narrative/////
       objectReference: {fileID: 0}
+    - target: {fileID: 594543508088915674, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: cd56316e13ab18a408c5da3c2bffc053, type: 3}
     - target: {fileID: 594543508146778961, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
       propertyPath: character
       value: 
-      objectReference: {fileID: 80892026}
+      objectReference: {fileID: 0}
     - target: {fileID: 594543508146778962, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
       propertyPath: character
       value: 
-      objectReference: {fileID: 80892026}
+      objectReference: {fileID: 0}
     - target: {fileID: 594543508146778962, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
       propertyPath: storyText
       value: This is an island, a sort of station for lost souls like you.
@@ -7988,7 +8016,7 @@ PrefabInstance:
     - target: {fileID: 594543508146778963, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
       propertyPath: character
       value: 
-      objectReference: {fileID: 80892026}
+      objectReference: {fileID: 0}
     - target: {fileID: 594543508146778963, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
       propertyPath: storyText
       value: "Yes? What\u2019s that?"
@@ -7996,7 +8024,7 @@ PrefabInstance:
     - target: {fileID: 594543508146778964, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
       propertyPath: character
       value: 
-      objectReference: {fileID: 80892026}
+      objectReference: {fileID: 0}
     - target: {fileID: 594543508146778964, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
       propertyPath: storyText
       value: Crossing? I have a fee of two coins for those wishing to cross the sea.
@@ -8008,7 +8036,7 @@ PrefabInstance:
     - target: {fileID: 594543508146778972, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
       propertyPath: character
       value: 
-      objectReference: {fileID: 80892026}
+      objectReference: {fileID: 0}
     - target: {fileID: 594543508146778973, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.7322328
@@ -8071,7 +8099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 594543508421383982, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
       propertyPath: commandList.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 594543508421383982, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
       propertyPath: commandList.Array.data[1]
@@ -8085,6 +8113,14 @@ PrefabInstance:
       propertyPath: commandList.Array.data[3]
       value: 
       objectReference: {fileID: 1288422862}
+    - target: {fileID: 594543508421383982, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
+      propertyPath: commandList.Array.data[4]
+      value: 
+      objectReference: {fileID: 1288422863}
+    - target: {fileID: 594543508421383982, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
+      propertyPath: commandList.Array.data[5]
+      value: 
+      objectReference: {fileID: 1288422861}
     - target: {fileID: 594543508421383983, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
       propertyPath: storyText
       value: And you have the coins.
@@ -8165,6 +8201,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 594543508700560313, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: cd56316e13ab18a408c5da3c2bffc053, type: 3}
     - target: {fileID: 594543508899497922, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
       propertyPath: m_Type
       value: 2
@@ -8205,6 +8245,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8e67e1bb4b10a96408d068003b22070b, type: 3}
+    - target: {fileID: 594543509084960479, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: cd56316e13ab18a408c5da3c2bffc053, type: 3}
     - target: {fileID: 594543509133152719, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -8231,6 +8275,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
+--- !u!114 &594543509280871168 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 594543508421383984, guid: 8ba6a2936a35b504b881b4cf3bc0cbe0, type: 3}
+  m_PrefabInstance: {fileID: 594543509280871167}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288422860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2035027296862030011
 PrefabInstance:
   m_ObjectHideFlags: 0
