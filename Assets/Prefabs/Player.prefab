@@ -247,6 +247,9 @@ MonoBehaviour:
   playerModel: {fileID: 5991037617279338501}
   playerHead2: {fileID: 4755242877607659489}
   playerArm: {fileID: 3088630966875831084}
+  spawn: {fileID: 0}
+  MenuUI: {fileID: 0}
+  pausedState: 0
   heightDeath: -5
   walkSpeed: 2
   runSpeed: 5
@@ -255,7 +258,6 @@ MonoBehaviour:
   shouldRespawn: 0
   headMode: 0
   canPlayerMove: 1
-  spawn: {fileID: 0}
 --- !u!208 &1881592814
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -495,7 +497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 238735bf745420945aed3d4d1b53e624, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0032981012
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 238735bf745420945aed3d4d1b53e624, type: 3}
       propertyPath: m_LocalPosition.y
@@ -503,7 +505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 238735bf745420945aed3d4d1b53e624, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.052574396
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 238735bf745420945aed3d4d1b53e624, type: 3}
       propertyPath: m_LocalRotation.w
