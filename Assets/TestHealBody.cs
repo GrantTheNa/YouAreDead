@@ -19,6 +19,6 @@ public class TestHealBody : MonoBehaviour
         if (player != null)
             playerObject.Heal();
 
-        Instantiate(healParticle, other.gameObject.transform);
+        Instantiate(healParticle, gameObject.transform);
     }
 }
