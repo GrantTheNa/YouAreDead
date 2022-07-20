@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireWall : MonoBehaviour
 {
     public GameObject[] flamePrefabs;
-    public Animator door;
+    public GameObject door;
 
     //Turn on Area
     public GameObject showRoom;
@@ -30,8 +30,11 @@ public class FireWall : MonoBehaviour
 
     private void DestroyDoor()
     {
-
-        showRoom.SetActive(true);
-        door.SetTrigger("Open");
+        if (showRoom != null)
+        {
+            showRoom.SetActive(true);
+        }
+        door.SetActive(false);
+        Debug.Log("Open Gatre");
     }
 }
