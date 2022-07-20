@@ -31,7 +31,10 @@ public class FireWall : MonoBehaviour
     private void DestroyDoor()
     {
         if (showRoom != null)
+        {
             showRoom.SetActive(true);
+        }
         door.SetActive(false);
+        Debug.Log("Open Gatre");
     }
 }
