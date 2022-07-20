@@ -42,8 +42,6 @@ public class PlayerControls : MonoBehaviour
     float ccHeight;
     float ccRadius;
 
-    
-
     void Awake()
     {
         if (mainCamera == null)
@@ -89,6 +87,7 @@ public class PlayerControls : MonoBehaviour
 
     void HasPlayerPausedGame()
     { 
+        //player pressed pause
         if (inputs.pause)
         {
             pausedState = true;
@@ -107,20 +106,6 @@ public class PlayerControls : MonoBehaviour
     {
         pausedState = false;
         canPlayerMove = true;
-    }
-
-    void HeadRollTest()
-    {
-        headMode = true;
-
-        if (playerArm != null)
-            playerArm.SetActive(true);
-
-        if (playerHead2 != null)
-            playerHead2.SetActive(true);
-
-        if (playerModel != null)
-            playerModel.SetActive(false);      
     }
 
     void RespawnPlayer()

@@ -13,15 +13,6 @@ public class MenuScript : MonoBehaviour
         player.pausedState = true;
     }
 
-    void Update()
-    {
-        //if menu is active
-        if (menuScreen.gameObject.activeSelf == true)
-        {
-            player.PauseGame();
-        }
-    }
-
     public void Quit()
     {
         Application.Quit();
