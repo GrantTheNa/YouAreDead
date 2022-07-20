@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7002560299875294182
+--- !u!1 &8480161180669848376
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1068260796135526229}
-  - component: {fileID: 5775371686152917754}
-  - component: {fileID: 1258251232158259528}
+  - component: {fileID: 1896784400688988043}
+  - component: {fileID: 4947132890540253732}
+  - component: {fileID: 430012402185955734}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: BloodEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1068260796135526229
+--- !u!4 &1896784400688988043
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7002560299875294182}
+  m_GameObject: {fileID: 8480161180669848376}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 10.23716, y: 5.421175, z: -4.083296}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!198 &5775371686152917754
+--- !u!198 &4947132890540253732
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7002560299875294182}
+  m_GameObject: {fileID: 8480161180669848376}
   serializedVersion: 7
   lengthInSec: 0.6
   simulationSpeed: 1
@@ -4796,14 +4796,14 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &1258251232158259528
+--- !u!199 &430012402185955734
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7002560299875294182}
+  m_GameObject: {fileID: 8480161180669848376}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
